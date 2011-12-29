@@ -1,0 +1,68 @@
+.landingPage{
+	padding:10px 0 150px 0;
+}
+
+.searchCount{
+	clear:both;
+	font-size:14px;
+	margin:20px 0 10px 0;
+}
+
+.searchResults{
+	list-style-type:none;
+}
+
+.searchResults li{
+	font-size:12px;
+	border-bottom:1px solid #999;
+	margin-bottom:10px;
+	padding-bottom:10px;
+}
+
+.searchResults li a{
+	font-size:22px;
+	text-transform:capitalize;
+	font-weight:bold;
+	line-height:28px;
+}
+
+.searchResults li p{
+	padding-top:10px;
+	font-size:14px;
+}
+
+.searchContainer{
+	clear:both;
+	list-style-type:none;
+	display:block;
+}
+.searchContainer li{
+	display:block;
+	float:left;
+}
+
+.searchContainer li input{
+	font-size:24px;
+	margin-top:10px;
+	width:780px;
+	padding:8px 5px;
+	border-top:1px solid #ccc;
+	border-left:1px solid #ccc;
+	border-right:2px solid #ddd;
+	border-bottom:2px solid #ddd;
+}
+
+.searchContainer li .submitButton{
+	width:100px;
+	padding:8px 0;
+	font-size:24px;
+	background:#fff;
+	border-top:1px solid #ccc;
+	border-left:1px solid #ccc;
+	border-right:2px solid #666;
+	border-bottom:2px solid #666;
+}
+
+.searchContainer li .submitButton:active{
+	background:#eee;
+}

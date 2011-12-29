@@ -1,0 +1,17 @@
+development:
+    :action_controller:
+        :session:
+          :secret: "shjfgkhsdkjfgkjsdhgjksdhgkjhsdkghfjksd"
+    :cache:
+        :name: "solr-frontend"
+        :timeout: 15.minutes
+    :site:
+        :name: "Test Name"
+        :tagline: "Test Tag Line"
+        :description: "Test Description"
+        :keywords: "hsjkd, ahjdk, ahsfkj"
+        :host: "www.domain.com"
+        :solr_url: "http://205.134.239.167:8080/solr/select/"
+    :google:
+        :verification: "(optional, but strongly suggested)"
+        :analytics: "(optional)"

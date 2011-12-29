@@ -1,0 +1,6 @@
+<ul class="searchContainer">
+	<% form_tag("/search/s", :method => "post") do %>
+		<li><%= text_field_tag(:q, @base_search_term) %></li>
+		<li><%= submit_tag("Search", {:class=>"submitButton"}) %></li>
+	<% end %>
+</ul>

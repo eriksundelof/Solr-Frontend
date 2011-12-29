@@ -1,0 +1,21 @@
+<%=render :partial => "search/s"%>
+
+<%unless @items.empty?%>
+	<p class="searchCount"><%=number_with_delimiter(@number_of_results)%> results found.</p>
+	<%=render :partial => "search/pagination", :locals => { :options => @options }%>
+	<ul class="searchResults">
+		<%@items.each do |item|%>
+			<li>
+				<a href="<%=item[:url]%>" title="<%=item[:title]%>">
+					<%=item[:title]%>
+				</a>
+				<p>
+					<%=item[:content].strip_and_shorten(50)%>
+				</p>
+			</li>
+		<%end%>
+	</ul>
+	<%=render :partial => "search/pagination", :locals => { :options => @options }%>
+<%else%>
+	<p>Sorry, no results were found.</p>
+<%end%>

@@ -1,0 +1,66 @@
+<div class="paginationContainer">
+	<ul>
+		<% css_class = options[:show_link][:first_page] ? "" : "class=\"current\""%>
+		<li <%=css_class%>>
+			<%if options[:show_link][:first_page]%>
+				<a href="<%=options[:link_base]%>/1" title="Page 1">
+			<%end%>
+					&laquo;
+			<%if options[:show_link][:first_page]%>
+				</a>
+			<%end%>
+		</li>
+		<li <%=css_class%>>
+			<%if options[:show_link][:first_page]%>
+				<a href="<%=options[:link_base]%>/<%=(options[:current_page]-1)%>" title="Page <%=(options[:current_page]-1)%>">
+			<%end%>
+					&lt;
+			<%if options[:show_link][:first_page]%>
+				</a>
+			<%end%>
+		</li> 
+		<li class="dead">
+			<%=options[:show_ellipsis][:before] ? " ... " : " | "%>
+		</li>
+		<% i = 1%>
+		<%options[:total_pages_to_show].times do %>
+			<% page_num = (options[:start_page]+(i-1))%>
+				<% if page_num <= options[:end_page]%>
+				<% css_class = page_num==options[:current_page] ? "class=\"current\"" : ""%>
+				<li <%=css_class%>>
+					<%if page_num!=options[:current_page]%>
+						<a href="<%=options[:link_base]%>/<%=page_num%>" title="Page <%=page_num%>">
+					<%end%>
+							<%=page_num%>
+					<%if page_num!=options[:current_page]%>
+						</a>
+					<%end%>
+
+				</li>
+			<%end%>
+			<%i += 1%>
+		<%end%>
+		<li class="dead">
+			<%=options[:show_ellipsis][:after] ? " ... " : " | "%>
+		</li>
+		<% css_class = options[:show_link][:last_page] ? "" : "class=\"current\""%>
+		<li <%=css_class%>>
+			<%if options[:show_link][:last_page]%>
+				<a href="<%=options[:link_base]%>/<%=(options[:current_page]+1)%>" title="Page <%=(options[:current_page]+1)%>">
+			<%end%>
+					&gt;
+			<%if options[:show_link][:last_page]%>
+				</a>
+			<%end%>
+		</li>
+		<li <%=css_class%>>
+			<%if options[:show_link][:last_page]%>
+				<a href="<%=options[:link_base]%>/<%=options[:total_nr_pages]%>" title="Page <%=options[:total_nr_pages]%>">
+			<%end%>
+					&raquo;
+			<%if options[:show_link][:last_page]%>
+				</a>
+			<%end%>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,17 @@
+development:
+    :action_controller:
+        :session:
+          :secret: "make sure this is really long an difficult to guess. use md5 hashes of something hard to guess to assure sufficient security"
+    :cache:
+        :name: "solr-frontend"
+        :timeout: 15.minutes
+    :site:
+        :name: ""
+        :tagline: ""
+        :description: ""
+        :keywords: ""
+        :host: "www.domain.com"
+        :solr_url: "solr_url"
+    :google:
+        :verification: "(optional, but strongly suggested)"
+        :analytics: "(optional)"

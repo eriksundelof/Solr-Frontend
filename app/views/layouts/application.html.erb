@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		
+		<%=render :partial => "layouts/head"%>
+				
+	</head>
+
+	<body>  
+		
+		<div class="outerWrapper">
+			
+			<div class="innerWrapper">
+
+				<div class="contentContainer">
+					<%=yield %>
+				</div>
+
+			</div>
+			
+			<%= render :partial => "layouts/footer"%>
+
+			<% if Rails.env.production? && !is_admin? %><%=render :partial => "layouts/google_analytics"%><%end%>
+
+		</div>
+	</body>
+</html>

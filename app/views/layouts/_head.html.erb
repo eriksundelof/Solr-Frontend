@@ -1,0 +1,21 @@
+<title><%=@header[:title].join(" :: ")%></title>
+
+<%=get_stylesheets(is_admin?)%>
+
+<!-- SUPPORT FOR GOOGLE WEB FONTS-->
+<%if SETTINGS[:google_web_fonts]%>
+	<%SETTINGS[:google_web_fonts].split(",") do |font|%>
+		<link href='http://fonts.googleapis.com/css?family=<%=font.strip.split(" ").join("+")%>' rel='stylesheet' type='text/css' />
+	<%end%>
+<%end%>
+<!-- END GOOGLE WEB FONTS -->
+
+<%= yield :head %>
+
+<meta name="description" content="<%=strip_tags(@header[:description]).strip%>" />
+<meta name="keywords" content="<%=@header[:keywords]%>" />
+
+<meta name="OriginalPublicationDate" content="g" />
+<meta http-equiv="Content-Language" content="en-gb" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<%if SETTINGS[:google][:verification]%><meta name="google-site-verification" content="<%=SETTINGS[:google][:verification]%>" /><%end%>
